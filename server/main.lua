@@ -4,7 +4,7 @@ if Config.Framework == 'qb-core' then QBCore = exports['qb-core']:GetCoreObject(
 -- ## LOCAL FUNCTIONS
 local function CreateCallback(name, cb, ...)
     if Config.Framework == 'qb-core' then
-        QBCore.Functions.CreateCallback(source, name, cb, ...)
+        QBCore.Functions.CreateCallback(name, cb, ...)
     elseif Config.Framework == 'esx' then
         ESX.RegisterServerCallback(name, cb)
     end
