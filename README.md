@@ -10,7 +10,7 @@ For suggestions of scripts idea or features idea, please use the #📫・suggest
 ### Installation
 - Download ZIP
 - Drag and drop resource in your server
-- Add `ensure zf-dumpster` in server.cfg
+- Add `ensure zf-storerobbery` in server.cfg
 - Make you configs in config.lua
 - Restart the server
 
