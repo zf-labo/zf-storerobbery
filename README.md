@@ -16,24 +16,24 @@ For suggestions of scripts idea or features idea, please use the #📫・suggest
 
 
 `**ESX REQUIRED DEPENDENCIES**`
-es_extended [https://github.com/esx-framework/esx-legacy]
-ox_target [https://github.com/overextended/ox_target]
-ox_lib >= v2.14.0 [https://github.com/overextended/ox_lib]
+- es_extended [https://github.com/esx-framework/esx-legacy]
+- ox_target [https://github.com/overextended/ox_target]
+- ox_lib >= v2.14.0 [https://github.com/overextended/ox_lib]
 
 `**ESX OPTIONAL DEPENDENCIES**`
-memorygame [https://github.com/pushkart2/memorygame]
-boostinghack [https://github.com/Lionh34rt/boostinghack]
-cd_dispatch
+- memorygame [https://github.com/pushkart2/memorygame]
+- boostinghack [https://github.com/Lionh34rt/boostinghack]
+- cd_dispatch
 
 -----------------------
 
 `**QBCORE REQUIRED DEPENDENCIES**`
-qb-core [https://github.com/qbcore-framework/qb-core]
-qb-target [https://github.com/qbcore-framework/qb-target]
+- qb-core [https://github.com/qbcore-framework/qb-core]
+- qb-target [https://github.com/qbcore-framework/qb-target]
 
 `**QBCORE OPTIONAL DEPENDENCIES**`
-ps-ui [https://github.com/project-sloth/ps-ui]
-ps-dispatch [https://github.com/Project-Sloth/ps-dispatch]
-memorygame [https://github.com/pushkart2/memorygame]
-qb-lock [https://github.com/YishengCheww/qb-lock]
-boostinghack [https://github.com/Lionh34rt/boostinghack]
+- ps-ui [https://github.com/project-sloth/ps-ui]
+- ps-dispatch [https://github.com/Project-Sloth/ps-dispatch]
+- memorygame [https://github.com/pushkart2/memorygame]
+- qb-lock [https://github.com/YishengCheww/qb-lock]
+- boostinghack [https://github.com/Lionh34rt/boostinghack]
