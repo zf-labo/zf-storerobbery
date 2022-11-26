@@ -3,7 +3,6 @@ Config = {}
 
 -- ### CORE CONFIGS
 Config.Framework = 'qb-core' -- Framework used on your server. Available options: 'qb-core', 'esx'
-Config.OxInventory = GetResourceState('ox_inventory') -- DO NOT TOUCH
 Config.Locale = 'en' -- ESX only. Available options: 'en', 'fr'
 
 

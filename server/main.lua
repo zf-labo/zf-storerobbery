@@ -36,7 +36,7 @@ local function GetPlayerJob(pid)
 end
 
 local function AddItem(pid, item, amount)
-    if Config.OxInventory == 'started' then
+    if GetResourceState('ox_inventory') == 'started' then
         exports.ox_inventory:AddItem(pid, item, amount)
     elseif Config.Framework == 'qb-core' then
         local Player = QBCore.Functions.GetPlayer(pid)
@@ -48,7 +48,7 @@ local function AddItem(pid, item, amount)
 end
 
 local function HasItem(pid, item)
-    if Config.OxInventory == 'started' then
+    if GetResourceState('ox_inventory') == 'started' then
         return exports.ox_inventory:Search(pid, 'count', item)
     elseif Config.Framework == 'qb-core' then
         return QBCore.Functions.HasItem(pid, item, 1)
@@ -60,7 +60,7 @@ end
 
 local function RemoveItem(pid, item, amount)
     local Player = GetPlayer(pid)
-    if Config.OxInventory == 'started' then
+    if GetResourceState('ox_inventory') == 'started' then
         exports.ox_inventory:RemoveItem(pid, item, amount)
     elseif Config.Framework == 'qb-core' then
         Player.Functions.RemoveItem(item, amount)
