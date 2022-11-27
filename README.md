@@ -15,6 +15,46 @@ For suggestions of scripts idea or features idea, please use the #📫・suggest
 5. Make the configs in `zf-storerobbery/shared/config.lua`
 6. Restart the server and Enjoy
 
+For ESX, the shared_scripts should be this:
+```lua
+shared_scripts {
+    'shared/*.lua',
+    
+    -- ### ESX ###
+    '@ox_lib/init.lua',
+    '@es_extended/imports.lua',
+    '@es_extended/locale.lua',
+    'esx_locales/*.lua',
+    
+    
+    -- ### QB ###
+    --'@qb-core/shared/locale.lua',
+    --'qb_locales/*.lua',
+}
+
+```
+
+For QBCore, the shared_scripts should be this:
+```lua
+shared_scripts {
+    'shared/*.lua',
+    
+    -- ### ESX ###
+    --'@ox_lib/init.lua',
+    --'@es_extended/imports.lua',
+    --'@es_extended/locale.lua',
+    --'esx_locales/*.lua',
+    
+    
+    -- ### QB ###
+    '@qb-core/shared/locale.lua',
+    'qb_locales/*.lua',
+}
+
+```
+
+-----------------------
+
 `**ESX REQUIRED DEPENDENCIES**`
 - es_extended [https://github.com/esx-framework/esx-legacy]
 - ox_target [https://github.com/overextended/ox_target]
