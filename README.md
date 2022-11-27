@@ -7,13 +7,13 @@ For issues and bugs, please use the Issues Reporter directly on Github.
 ## Suggestions
 For suggestions of scripts idea or features idea, please use the #📫・suggestions channel on our Discord: **https://discord.gg/wp3SqwRUmH**
 
-### Installation
-- Download ZIP
-- Drag and drop resource in your server
-- Add `ensure zf-storerobbery` in server.cfg
-- Make you configs in config.lua
-- Restart the server
-
+## Installation
+1. Download ZIP (via release or download)
+2. Drag and Drop the resource in your server
+3. Add `ensure zf-storerobbery` in server.cfg (Caution, it needs to be started after qb-target or ox_target)
+4. Go into `fxmanifest.lua` and uncomment ESX if you are using ESX or uncomment QBCore if you are using QBCore.
+5. Make the configs in `zf-storerobbery/shared/config.lua`
+6. Restart the server and Enjoy
 
 `**ESX REQUIRED DEPENDENCIES**`
 - es_extended [https://github.com/esx-framework/esx-legacy]
