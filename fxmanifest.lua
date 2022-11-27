@@ -10,17 +10,15 @@ client_script 'client/*.lua'
 server_script 'server/*.lua'
 shared_scripts {
     'shared/*.lua',
-    -- ### OX ###
+
+    -- ### UNCOMMENT BELOW FOR ESX ###
     --'@ox_lib/init.lua',
-
-
-    -- ### ESX ###
     --'@es_extended/imports.lua',
     --'@es_extended/locale.lua',
     --'esx_locales/*.lua',
     
     
-    -- ### QB ###
-    '@qb-core/shared/locale.lua',
-    'qb_locales/*.lua',
+    -- ### UNCOMMENT BELOW FOR QBCORE ###
+    --'@qb-core/shared/locale.lua',
+    --'qb_locales/*.lua',
 }
