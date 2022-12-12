@@ -126,8 +126,8 @@ local function CallPolice()
         TriggerServerEvent('cd_dispatch:AddNotification', {
             job_table = Config.PoliceJobs, 
             coords = GetEntityCoords(PlayerPedId()),
-            title =  _U('police_code') .. ' - ' .. _U('police_bliptitle'),
-            message = _U('police_bliptitle'), 
+            title =  _L('police_code') .. ' - ' .. _L('police_bliptitle'),
+            message = _L('police_bliptitle'), 
             flash = 0,
             unique_id = tostring(math.random(0000000,9999999)),
             blip = {
@@ -135,7 +135,7 @@ local function CallPolice()
                 scale = 1.2, 
                 colour = 3,
                 flashes = false, 
-                text = _U('police_code') .. ' - ' .. _U('police_bliptitle'),
+                text = _L('police_code') .. ' - ' .. _L('police_bliptitle'),
                 time = (5*60*1000),
                 sound = 1,
             }
