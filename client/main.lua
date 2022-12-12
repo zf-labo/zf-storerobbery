@@ -127,7 +127,7 @@ local function CallPolice()
             job_table = Config.PoliceJobs, 
             coords = GetEntityCoords(PlayerPedId()),
             title =  _L('police_code') .. ' - ' .. _L('police_bliptitle'),
-            message = _L('police_bliptitle'), 
+            message = _L('police_message'), 
             flash = 0,
             unique_id = tostring(math.random(0000000,9999999)),
             blip = {
