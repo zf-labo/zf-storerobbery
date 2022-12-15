@@ -86,157 +86,157 @@ Config.SafeReset = 30
 Config.RegisterZones = {
     [1] = {
         coords = vector3(-47.24,-1757.65, 29.53),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [2] = {
         coords = vector3(-48.58,-1759.21, 29.59),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [3] = {
         coords = vector3(-1486.26,-378.0,  40.16),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [4] = {
         coords = vector3(-1222.03,-908.32, 12.32),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [5] = {
         coords = vector3(-706.08, -915.42, 19.21),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [6] = {
         coords = vector3(-706.16, -913.5, 19.21),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [7] = {
         coords = vector3( 24.47, -1344.99, 29.49),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [8] = {
         coords = vector3(24.45, -1347.37, 29.49),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [9] = {
         coords = vector3(1134.15, -982.53, 46.41),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [10] = {
         coords = vector3(1165.05, -324.49, 69.2),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [11] = {
         coords = vector3(1164.7, -322.58, 69.2),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [12] = {
         coords = vector3(373.14, 328.62, 103.56),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [13] = {
         coords = vector3(372.57, 326.42, 103.56),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [14] = {
         coords = vector3(-1818.9, 792.9, 138.08),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [15] = {
         coords = vector3(-1820.17, 794.28, 138.08),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [16] = {
         coords = vector3(-2966.46, 390.89, 15.04),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [17] = {
         coords = vector3(-3041.14, 583.87, 7.9),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [18] = {
         coords = vector3(-3038.92, 584.5, 7.9),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [19] = {
         coords = vector3(-3244.56, 1000.14, 12.83),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [20] = {
         coords = vector3(-3242.24, 999.98, 12.83),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [21] = {
         coords = vector3(549.42, 2669.06, 42.15),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [22] = {
         coords = vector3(549.05, 2671.39, 42.15),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [23] = {
         coords = vector3(1165.9, 2710.81, 38.15),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [24] = {
         coords = vector3(2676.02, 3280.52, 55.24),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [25] = {
         coords = vector3(2678.07, 3279.39, 55.24),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [26] = {
         coords = vector3(1958.96, 3741.98, 32.34),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [27] = {
         coords = vector3(1960.13, 3740.0, 32.34),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [28] = {
         coords = vector3(1728.86, 6417.26, 35.03),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [29] = {
         coords = vector3(1727.85, 6415.14, 35.03),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [31] = {
         coords = vector3(160.52, 6641.74, 31.6),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [32] = {
         coords = vector3(162.16, 6643.22, 31.6),
-        robbed = false,
+        alerted = false,
         time = 0
     },
 }
@@ -244,92 +244,92 @@ Config.RegisterZones = {
 Config.SafeZones = {
     [1] = {
         coords = vector3(-43.43, -1748.3, 29.42),
-        robbed = false,
+        alerted = false,
         time = 0
     }, 
     [2] = {
         coords = vector3(-1478.94, -375.5, 39.16),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [3] = {
         coords = vector3(-1220.85, -916.05, 11.32),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [4] = {
         coords = vector3(-709.74, -904.15, 19.21),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [5] = {
         coords = vector3(31.19, -1339.28, 29.5),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [6] = {
         coords = vector3(1126.77, -980.1, 45.41),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [7] = {
         coords = vector3(1159.46, -314.05, 69.2),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [8] = {
         coords = vector3(381.04, 332.58, 103.57),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [9] = {
         coords = vector3(-1829.27, 798.76, 138.19),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [10] = {
         coords = vector3(-2959.64, 387.08, 14.04),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [11] = {
         coords = vector3(-3048.66, 588.39, 7.91),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [12] = {
         coords = vector3(-3249.74, 1007.37, 12.83),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [13] = {
         coords = vector3(543.78, 2662.49, 42.16),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [14] = {
         coords = vector3(1169.31, 2717.79, 37.15),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [15] = {
         coords = vector3(2674.28, 3289.19, 55.24),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [16] = {
         coords = vector3(1961.75, 3750.3, 32.34),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [17] = {
         coords = vector3(1737.48, 6419.49, 35.04),
-        robbed = false,
+        alerted = false,
         time = 0
     },
     [18] = {
         coords = vector3(170.99, 6642.58, 31.7),
-        robbed = false,
+        alerted = false,
         time = 0
     },
 }
