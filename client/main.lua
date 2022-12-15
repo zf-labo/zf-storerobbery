@@ -17,9 +17,9 @@ local function AddTarget(name, coords, width, depth, infos, options, distance)
             options = options
         })
     elseif Config.TargetScript == 'qtarget' then
-        exports.qtarget:AddBoxZone(name, coords, width, depth, {
+        exports.qtarget:AddBoxZone(name, coords, width, depth, infos, {
             options = options,
-            distance = distance
+            distance = distance or 1.5
         })
     end
 end
