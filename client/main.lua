@@ -107,6 +107,8 @@ end
 local function CallPolice()
     if not Config.AlertPolice then return end
     if math.random(1, 100) > Config.AlertChance then return end
+    if type == 'register' and Config.RegisterZones[zone].alerted then return end
+    if type == 'safe' and Config.SafeZones[zone].alerted then return end
     if Config.DispatchScript == 'qb-core' then
         TriggerServerEvent('police:server:policeAlert', _L('police_bliptitle'))
     elseif Config.DispatchScript == 'ps-dispatch' then
@@ -141,6 +143,8 @@ local function CallPolice()
             }
         })
     end
+    if type == 'register' then Config.RegisterZones[zone].alerted = true end
+    if type == 'safe' then Config.SafeZones[zone].alerted = true end
 end
 
 local function Loading(type)
@@ -273,7 +277,7 @@ RegisterNetEvent('zf-storerobbery:openRegister', function(data)
                         Notify(_L('notify_failedminigame'), 'error')
                         TriggerServerEvent('zf-storerobbery:loseItem', type, false)
                     end
-                    CallPolice()
+                    CallPolice(type, id)
                 else
                     Notify(_L('notify_nopick'), 'error')
                 end
