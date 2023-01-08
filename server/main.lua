@@ -84,7 +84,8 @@ local function AddMoney(pid, amount, type)
         Player.Functions.AddMoney(type, amount)
     elseif Config.Framework == 'esx' then
         local Player = ESX.GetPlayerFromId(pid)
-        Player.addMoney(amount, 'heist')
+        if type == 'cash' then type = 'money' end
+        Player.addAccountMoney(type, amount)
     end
 end
 
@@ -147,7 +148,7 @@ CreateCallback('zf-storerobbery:changeState', function(source, cb, rid, type)
         else
             if Config.SafeLoot == 'money' then
                 local rdmAmount = math.random(Config.SafeLootMoney.min, Config.SafeLootMoney.max)
-                AddMoney(src, rdmAmount, 'money')
+                AddMoney(src, rdmAmount, 'cash')
             elseif Config.SafeLoot == 'markedbills' then
                 local rdmAmount = math.random(Config.SafeLootMarkedBills.min, Config.SafeLootMarkedBills.max)
                 AddItem(src, 'markedbills', rdmAmount, type)
