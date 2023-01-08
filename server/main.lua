@@ -35,11 +35,20 @@ local function GetPlayerJob(pid)
     end
 end
 
-local function AddItem(pid, item, amount)
+local function AddItem(pid, item, amount, markedbills)
     if GetResourceState('ox_inventory') == 'started' then
         exports.ox_inventory:AddItem(pid, item, amount)
     elseif Config.Framework == 'qb-core' then
         local Player = QBCore.Functions.GetPlayer(pid)
+        if markedbills then
+            local info = {}
+            if markedbills == 'register' then
+                info = {['worth'] = math.floor(math.random(Config.RegisterLootMarkedBills.min, Config.RegisterLootMarkedBills.max))}
+            elseif markedbills == 'safe' then
+                info = {['worth'] = math.floor(math.random(Config.SafeLootMarkedBills.min, Config.SafeLootMarkedBills.max))}
+            end
+            Player.Functions.AddItem(item, amount, false, info)
+        end
         Player.Functions.AddItem(item, amount)
     elseif Config.Framework == 'esx' then
         local Player = ESX.GetPlayerFromId(pid)
@@ -118,7 +127,7 @@ CreateCallback('zf-storerobbery:changeState', function(source, cb, rid, type)
             elseif Config.RegisterLoot == 'markedbills' then
                 local rdmAmount = math.random(Config.RegisterLootMarkedBills.min, Config.RegisterLootMarkedBills.max)
                 if Config.Framework == 'qb-core' then
-                    AddItem(src, 'markedbills', rdmAmount)
+                    AddItem(src, 'markedbills', rdmAmount, type)
                 elseif Config.Framework == 'esx' then
                     AddMoney(src, 'black_money', rdmAmount)
                 end
@@ -130,7 +139,7 @@ CreateCallback('zf-storerobbery:changeState', function(source, cb, rid, type)
                     local lootChance = math.random(1,100)
                     local item = Config.RegisterLoottable[math.random(1, #Config.RegisterLoottable)]
                     if lootChance >= item.chances then
-                        AddItem(src, item.item, math.random(item.min, item.max))
+                        AddItem(src, item.item, math.random(item.min, item.max), false)
                     end
                 end
             end
@@ -141,7 +150,7 @@ CreateCallback('zf-storerobbery:changeState', function(source, cb, rid, type)
                 AddMoney(src, rdmAmount, 'money')
             elseif Config.SafeLoot == 'markedbills' then
                 local rdmAmount = math.random(Config.SafeLootMarkedBills.min, Config.SafeLootMarkedBills.max)
-                AddItem(src, 'markedbills', rdmAmount)
+                AddItem(src, 'markedbills', rdmAmount, type)
             elseif Config.SafeLoot == 'item' then
                 local itemTable = {}
                 local itemAmount = math.random(1, Config.SafeMaxItems)
@@ -150,7 +159,7 @@ CreateCallback('zf-storerobbery:changeState', function(source, cb, rid, type)
                     local lootChance = math.random(1,100)
                     local item = Config.SafeLoottable[math.random(1, #Config.SafeLoottable)]
                     if lootChance >= item.chances then
-                        AddItem(src, item.item, math.random(item.min, item.max))
+                        AddItem(src, item.item, math.random(item.min, item.max), false)
                     end
                 end
             end
