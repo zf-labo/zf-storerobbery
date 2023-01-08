@@ -1,4 +1,5 @@
 if Config.Framework == 'qb-core' then QBCore = exports['qb-core']:GetCoreObject() end
+isBusy = false
 
 -- ## LOCAL FUNCTIONS
 local function AddTarget(name, coords, width, depth, infos, options, distance)
@@ -212,6 +213,7 @@ local function Loading(type)
         end
     end
     while result == nil do Wait(100) end
+    isBusy = false
     return result
 end
 
@@ -231,7 +233,10 @@ CreateThread(function()
                 icon = 'fas fa-shopping-cart',
                 label = _L('target_unlockregister'),
                 rtype = 'register',
-                rid = _
+                rid = _,
+                canInteract = function()
+                    return not isBusy
+                end
             }
         }, 1.5)
     end
@@ -249,7 +254,10 @@ CreateThread(function()
                 icon = 'fas fa-vault',
                 label = _L('target_cracksafe'),
                 rtype = 'safe',
-                rid = _
+                rid = _,
+                canInteract = function()
+                    return not isBusy
+                end
             }
         }, 1.5)
     end
@@ -267,6 +275,7 @@ RegisterNetEvent('zf-storerobbery:openRegister', function(data)
                 if haveItem then
                     local wonMinigame = Minigame(type)
                     if wonMinigame then
+                        isBusy = true
                         if Loading(type) then
                             TriggerCallback('zf-storerobbery:changeState', function(state)
                                 if state then Notify(_L('notify_opening'), 'success') end
