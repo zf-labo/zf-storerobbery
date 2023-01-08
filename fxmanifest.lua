@@ -12,13 +12,13 @@ shared_scripts {
     'shared/*.lua',
 
     -- ### UNCOMMENT BELOW FOR ESX ###
-    --'@ox_lib/init.lua',
+    '@ox_lib/init.lua',
     --'@es_extended/imports.lua',
     --'@es_extended/locale.lua',
     --'esx_locales/*.lua',
     
     
     -- ### UNCOMMENT BELOW FOR QBCORE ###
-    --'@qb-core/shared/locale.lua',
-    --'qb_locales/*.lua',
+    '@qb-core/shared/locale.lua',
+    'qb_locales/*.lua',
 }

@@ -96,7 +96,7 @@ local function Minigame(type)
             local success = false
             exports['ps-ui']:Circle(function(result)
                 success = result
-            end, 1, 5)
+            end, 4, 7)
             return success
         elseif Config.SafeMinigame == 'boostinghack' then
             return exports['boostinghack']:StartHack()
