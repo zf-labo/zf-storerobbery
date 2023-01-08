@@ -58,7 +58,7 @@ end
 
 local function HasItem(pid, item)
     if GetResourceState('ox_inventory') == 'started' then
-        return exports.ox_inventory:Search(pid, 'count', item)
+        return exports.ox_inventory:GetItem(pid, item, nil, true)
     elseif Config.Framework == 'qb-core' then
         return QBCore.Functions.HasItem(pid, item, 1)
     elseif Config.Framework == 'esx' then

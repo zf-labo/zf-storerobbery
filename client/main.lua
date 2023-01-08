@@ -272,7 +272,7 @@ RegisterNetEvent('zf-storerobbery:openRegister', function(data)
         if Cops < Config.PoliceRequired then Notify(_L('notify_alreadyopen'), 'error') return end
         if not isOpen or isOpen == -1 then
             TriggerCallback('zf-storerobbery:checkItem', function(haveItem)
-                if haveItem then
+                if haveItem or haveItem >= 1 then
                     local wonMinigame = Minigame(type)
                     if wonMinigame then
                         isBusy = true
