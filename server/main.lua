@@ -116,9 +116,12 @@ CreateCallback('zf-storerobbery:changeState', function(source, cb, rid, type)
                 local rdmAmount = math.random(Config.RegisterLootMoney.min, Config.RegisterLootMoney.max)
                 AddMoney(src, rdmAmount, 'cash')
             elseif Config.RegisterLoot == 'markedbills' then
-                local rdmAmount = math.random(Config.RegisterLootMarkedBills.min, Config.RegisterLootMarkedBills.max)
                 if Config.Framework == 'qb-core' then
-                    AddItem(src, 'markedbills', rdmAmount)
+                    local info = {}
+                    info.worth = math.random(1000, 2500)
+                    local rdmAmount = math.random(Config.SafeLootMarkedBills.min, Config.SafeLootMarkedBills.max)
+                    Player.Functions.AddItem("markedbills", rdmAmount, false, info)
+                    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["markedbills"], "add")
                 elseif Config.Framework == 'esx' then
                     AddMoney(src, 'black_money', rdmAmount)
                 end
@@ -140,8 +143,11 @@ CreateCallback('zf-storerobbery:changeState', function(source, cb, rid, type)
                 local rdmAmount = math.random(Config.SafeLootMoney.min, Config.SafeLootMoney.max)
                 AddMoney(src, rdmAmount, 'money')
             elseif Config.SafeLoot == 'markedbills' then
+                local info = {}
+                info.worth = math.random(1000, 2500)
                 local rdmAmount = math.random(Config.SafeLootMarkedBills.min, Config.SafeLootMarkedBills.max)
-                AddItem(src, 'markedbills', rdmAmount)
+                Player.Functions.AddItem("markedbills", rdmAmount, false, info)
+                TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["markedbills"], "add")
             elseif Config.SafeLoot == 'item' then
                 local itemTable = {}
                 local itemAmount = math.random(1, Config.SafeMaxItems)
@@ -202,4 +208,5 @@ RegisterNetEvent('zf-storerobbery:loseItem', function(type, success)
     if itemLose == 1 and success then return end
     if math.random(1,100) >= loseChance then return end
     RemoveItem(src, item, 1)
+    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items[item], "remove")
 end)

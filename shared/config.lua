@@ -17,14 +17,14 @@ end
 
 
 -- ### MINIGAMES CONFIGS
-Config.RegisterMinigame = 'qb-lock' -- Available options: 'qb-lock', 'ox_lib', 'ps-ui'
-Config.SafeMinigame = 'qb-lock' -- Available options: 'qb-lock', 'ox_lib', 'memorygame', 'ps-ui', 'boostinghack'
+Config.RegisterMinigame = 'ps-ui' -- Available options: 'qb-lock', 'ox_lib', 'ps-ui'
+Config.SafeMinigame = 'ps-ui' -- Available options: 'qb-lock', 'ox_lib', 'memorygame', 'ps-ui', 'boostinghack'
 
 
 -- ### POLICE CONFIGS
 Config.AlertPolice = true
 Config.AlertChance = 100
-Config.PoliceRequired = 2
+Config.PoliceRequired = 1
 Config.PoliceJobs = {'police', 'bcso', 'sahp', 'sasp'}
 
 
@@ -36,35 +36,29 @@ Config.RegisterItemLostChance = 20 -- % of chance to lose the item
 
 -- ### REGISTER LOOT
 Config.RegisterLoot = 'money' -- Available options: 'money', 'markedbills', 'item'
-Config.RegisterLootMoney = {min = 1000, max = 5000}
-Config.RegisterLootMarkedBills = {min = 10, max = 50}
-Config.RegisterMaxItems = 2
+Config.RegisterLootMoney = {min = 150, max = 1000}
+Config.RegisterLootMarkedBills = {min = 1, max = 1}
+Config.RegisterMaxItems = 1
 Config.RegisterLoottable = { -- Loot table for the safe when Config.Safeloot = 'item'
-    [1] = {item = 'markedbills', chances = 80, min = 10, max = 50},
-    [2] = {item = 'weapon_crowbar', chances = 80, min = 1, max = 3},
-    [3] = {item = 'markedbills', chances = 60, min = 10, max = 50},
-    [4] = {item = 'markedbills', chances = 40, min = 10, max = 50},
-    [5] = {item = 'markedbills', chances = 20, min = 10, max = 50},
+    [1] = {item = 'markedbills', chances = 40, min = 1, max = 2},
 }
 
 
 -- ### SAFE CONFIGS
-Config.SafeItem = 'safecracker'
+Config.SafeItem = 'advancedlockpick'
 Config.SafeItemLost = 1 -- Available options: 0 (doesn't lose item'), 1 (loses item when failed), 2 (loses item when failed and when successful)
 Config.SafeItemLostChance = 50 -- % of chance to lose the item
 
 
 -- ### SAFE LOOT
 Config.SafeLoot = 'money' -- Available options: 'money', 'markedbills', 'item'
-Config.SafeLootMoney = {min = 1000, max = 5000}
-Config.SafeLootMarkedBills = {min = 15, max = 60}
-Config.SafeMaxItems = 5
+Config.SafeLootMoney = {min = 200, max = 700}
+Config.SafeLootMarkedBills = {min = 1, max = 3}
+Config.SafeMaxItems = 3
 Config.SafeLoottable = { -- Loot table for the safe when Config.Safeloot = 'item'
-    [1] = {item = 'markedbills', chances = 80, min = 20, max = 60},
-    [2] = {item = 'weapon_crowbar', chances = 80, min = 1, max = 3},
-    [3] = {item = 'markedbills', chances = 60, min = 20, max = 60},
-    [4] = {item = 'markedbills', chances = 40, min = 20, max = 60},
-    [5] = {item = 'markedbills', chances = 20, min = 20, max = 60},
+    [1] = {item = 'markedbills', chances = 80, min = 1, max = 3},
+    [2] = {item = 'methkey', chances = 2, min = 1, max = 1},
+    [3] = {item = 'cocainekey', chances = 2, min = 1, max = 1},
 }
 
 
