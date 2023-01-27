@@ -1,9 +1,9 @@
 local Translations = {
     notify = {
-        failedminigame = 'You failed you idiot!',
+        failedminigame = 'You Failed, Idiot!',
         opening = 'Opening...',
-        alreadyopen = 'Can\'t do this at the moment',
-        nopick = 'You doesn\'t have the tools to force this',
+        alreadyopen = 'Register Emptied...',
+        nopick = 'You Don\'t Have The Tools To Open This',
     },
     progress = {
         opening = 'Opening...',
