@@ -1,8 +1,9 @@
 Locales['en'] = {
-    ['notify_failedminigame']= 'You failed you idiot!',
+    ['notify_failedminigame']= 'You Failed, Idiot!',
     ['notify_opening']= 'Opening...',
-    ['notify_alreadyopen']= 'Can\'t do this at the moment',
-    ['notify_nopick']= 'You doesn\'t have the tools to force this',
+    ['notify_gotnothing'] = 'You got nothing from it',
+    ['notify_alreadyopen']= 'Register Emptied...',
+    ['notify_nopick']= 'You Don\'t Have The Tools To Open This',
     ['progress_opening']= 'Opening...',
     ['target_unlockregister']= 'Rob Register',
     ['target_cracksafe']= 'Crack Safe',

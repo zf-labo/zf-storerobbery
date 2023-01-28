@@ -1,6 +1,5 @@
 if Config.Framework == 'qb-core' then QBCore = exports['qb-core']:GetCoreObject() end
 
-
 -- ## LOCAL FUNCTIONS
 local function CreateCallback(name, cb, ...)
     if Config.Framework == 'qb-core' then
@@ -48,6 +47,7 @@ local function AddItem(pid, item, amount, markedbills)
                 info = {['worth'] = math.floor(math.random(Config.SafeLootMarkedBills.min, Config.SafeLootMarkedBills.max))}
             end
             Player.Functions.AddItem(item, amount, false, info)
+            TriggerClientEvent('inventory:client:ItemBox', pid, QBCore.Shared.Items[item], "add", amount)
         end
         Player.Functions.AddItem(item, amount)
     elseif Config.Framework == 'esx' then
@@ -58,11 +58,12 @@ end
 
 local function HasItem(pid, item)
     if GetResourceState('ox_inventory') == 'started' then
-        return exports.ox_inventory:GetItem(pid, item, nil, true)
+        local itemCount = exports.ox_inventory:GetItem(pid, item, nil, true)
+        if itemCount == 0 then return false else return true end
     elseif Config.Framework == 'qb-core' then
         return QBCore.Functions.HasItem(pid, item, 1)
     elseif Config.Framework == 'esx' then
-        local Player = ESX.GetPlayerFromId(pid)
+        local Player = GetPlayer(pid)
         return Player.hasItem(item)
     end
 end
@@ -73,6 +74,7 @@ local function RemoveItem(pid, item, amount)
         exports.ox_inventory:RemoveItem(pid, item, amount)
     elseif Config.Framework == 'qb-core' then
         Player.Functions.RemoveItem(item, amount)
+        TriggerClientEvent('inventory:client:ItemBox', pid, QBCore.Shared.Items[item], "remove", amount)
     elseif Config.Framework == 'esx' then
         Player.removeInventoryItem(item, amount)
     end
@@ -128,51 +130,55 @@ CreateCallback('zf-storerobbery:changeState', function(source, cb, rid, type)
             elseif Config.RegisterLoot == 'markedbills' then
                 local rdmAmount = math.random(Config.RegisterLootMarkedBills.min, Config.RegisterLootMarkedBills.max)
                 if Config.Framework == 'qb-core' then
-                    AddItem(src, 'markedbills', rdmAmount, type)
+                    AddItem(src, 'markedbills', 1, type)
                 elseif Config.Framework == 'esx' then
                     AddMoney(src, 'black_money', rdmAmount)
                 end
             elseif Config.RegisterLoot == 'item' then
-                local itemTable = {}
                 local itemAmount = math.random(1, Config.RegisterMaxItems)
+                local itemGot = 0
+                if itemAmount > #Config.RegisterLoottable then itemAmount = #Config.RegisterLoottable end
     
                 for i=1, itemAmount do
                     local lootChance = math.random(1,100)
                     local item = Config.RegisterLoottable[math.random(1, #Config.RegisterLoottable)]
                     if lootChance >= item.chances then
+                        itemGot = itemGot + 1
                         AddItem(src, item.item, math.random(item.min, item.max), false)
                     end
                 end
             end
-            return cb(true)
+            return cb(true, itemGot)
         else
             if Config.SafeLoot == 'money' then
                 local rdmAmount = math.random(Config.SafeLootMoney.min, Config.SafeLootMoney.max)
                 AddMoney(src, rdmAmount, 'cash')
             elseif Config.SafeLoot == 'markedbills' then
                 local rdmAmount = math.random(Config.SafeLootMarkedBills.min, Config.SafeLootMarkedBills.max)
-                AddItem(src, 'markedbills', rdmAmount, type)
+                AddItem(src, 'markedbills', 1, type)
             elseif Config.SafeLoot == 'item' then
-                local itemTable = {}
                 local itemAmount = math.random(1, Config.SafeMaxItems)
+                local itemGot = 0
+                if itemAmount > #Config.SafeLoottable then itemAmount = #Config.SafeLoottable end
     
                 for i=1, itemAmount do
                     local lootChance = math.random(1,100)
                     local item = Config.SafeLoottable[math.random(1, #Config.SafeLoottable)]
                     if lootChance >= item.chances then
+                        itemGot = itemGot + 1
                         AddItem(src, item.item, math.random(item.min, item.max), false)
                     end
                 end
             end
-            return cb(true)
+            return cb(true, itemGot)
         end
     end
     cb(false)
 end)
 
 CreateCallback('zf-storerobbery:checkItem', function(source, cb, type)
-    local item = ''
-    if type == 'register' then item = Config.RegisterItem else item = Config.SafeItem end
+    local item = Config.RegisterItem
+    if type == 'safe' then item = Config.SafeItem end
     cb(HasItem(source, item))
 end)
 

@@ -1,6 +1,7 @@
 Locales['fr'] = {
     ['notify_failedminigame']= 'Tu n\'as pas réussi, Imbécile!',
     ['notify_opening']= 'Ouverture...',
+    ['notify_gotnothing'] = 'Vous n\'avez rien reçu.',
     ['notify_alreadyopen']= 'Impossible de faire cela pour le moment',
     ['notify_nopick']= 'Tu n\'as pas les outils pour forcer cela',
     ['progress_opening']= 'Ouverture...',

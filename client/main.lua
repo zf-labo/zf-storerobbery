@@ -272,13 +272,16 @@ RegisterNetEvent('zf-storerobbery:openRegister', function(data)
         if Cops < Config.PoliceRequired then Notify(_L('notify_alreadyopen'), 'error') return end
         if not isOpen or isOpen == -1 then
             TriggerCallback('zf-storerobbery:checkItem', function(haveItem)
+                if not haveItem then return Notify(_L('notify_nopick'), 'error') end
                 if haveItem or haveItem >= 1 then
                     local wonMinigame = Minigame(type)
                     if wonMinigame then
                         isBusy = true
                         if Loading(type) then
-                            TriggerCallback('zf-storerobbery:changeState', function(state)
+                            TriggerCallback('zf-storerobbery:changeState', function(state, amount)
+                                print(amount)
                                 if state then Notify(_L('notify_opening'), 'success') end
+                                if amount == 0 then print('nothing...') Notify(_L('notify_gotnothing'), 'error') end
                                 TriggerServerEvent('zf-storerobbery:loseItem', type, true)
                             end, id, type)
                         end
@@ -287,8 +290,6 @@ RegisterNetEvent('zf-storerobbery:openRegister', function(data)
                         TriggerServerEvent('zf-storerobbery:loseItem', type, false)
                     end
                     CallPolice(type, id)
-                else
-                    Notify(_L('notify_nopick'), 'error')
                 end
             end, type)
         else

@@ -4,6 +4,7 @@ local Translations = {
         opening = 'Opening...',
         alreadyopen = 'Register Emptied...',
         nopick = 'You Don\'t Have The Tools To Open This',
+        gotnothing = 'You got nothing from it.',
     },
     progress = {
         opening = 'Opening...',
