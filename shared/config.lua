@@ -9,6 +9,9 @@ Config.Locale = 'en' -- ESX only. Available options: 'en', 'fr'
 -- ### SCRIPTS CONFIGS
 Config.TargetScript = 'qb-target' -- Target script used on your server. Available options: 'qb-target', 'ox_target', 'qtarget'
 Config.DispatchScript = 'qb-core' -- Dispatch script used on your server. Available options: 'qb-core', 'ps-dispatch', 'cd_dispatch'
+Config.DispatchCustom = function()
+    -- Put your code here
+end
 Config.NotificationScript = 'qb-core' -- Notifications used on the server. Available options: 'qb-core', 'esx', 'ox-lib', 'custom'
 Config.CustomNotification = function(msg, type) -- Only useable when Config.NotificationScript is set to 'custom'
     -- Put your code here
