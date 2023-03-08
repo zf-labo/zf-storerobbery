@@ -143,6 +143,8 @@ local function CallPolice()
                 sound = 1,
             }
         })
+    elseif Config.DispatchScript == 'custom' then
+        Config.DispatchCustom()
     end
     if type == 'register' then Config.RegisterZones[zone].alerted = true end
     if type == 'safe' then Config.SafeZones[zone].alerted = true end
